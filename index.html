@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>グラフ＆計算チャレンジ統合システム</title>
+<title>リスさんのグラフ＆計算チャレンジ統合システム</title>
 <style>
   body {
     font-family: 'Meiryo', sans-serif;
@@ -88,16 +88,16 @@
 </head>
 <body>
 
-<h1>グラフ＆計算チャレンジ統合システム</h1>
+<h1>リスさんのグラフ＆計算チャレンジ統合システム</h1>
 <div class="menu" id="menu">
-  <button onclick="switchMode('graph')">グラフ練習モード</button>
-  <button onclick="switchMode('calc')">計算チャレンジモード</button>
-  <button onclick="switchMode('records')">記録を見る</button>
+  <button onclick="switchMode('graph')">リスグラフ練習モード</button>
+  <button onclick="switchMode('calc')">計算チャレンジリスモード</button>
+  <button onclick="switchMode('records')">リスで記録を見る</button>
 </div>
 
-<!-- グラフモード -->
+<!-- リスグラフモード -->
 <div class="graph-mode" id="graph-mode">
-  <h2>グラフ練習モード</h2>
+  <h2>リスでグラフ練習モード</h2>
   <input id="equation" type="text" placeholder="例：y = x^2 + 2x - 3, (x-2)^2 + (y+1)^2 = 9" />
   <div>
     <button id="drawBtn">式からグラフを描く</button>
@@ -106,7 +106,7 @@
     <button id="rulerBtn">定規モード</button>
     <button id="rulerDrawBtn">線を引く</button>
     <button id="freeBtn">手書きモード</button>
-    <button onclick="switchMode('menu')">メニューに戻る</button>
+    <button onclick="switchMode('menu')">リスさんのおかげでメニューに戻る</button>
   </div>
   <div class="graph-container">
     <canvas id="graphCanvas" width="800" height="500"></canvas>
@@ -116,14 +116,14 @@
   <div id="score"></div>
 </div>
 
-<!-- 計算モード -->
+<!-- リスさんの計算モード -->
 <div class="calc-mode" id="calc-mode">
-  <h2>計算チャレンジモード</h2>
+  <h2>リスさんの計算チャレンジモード</h2>
   <div id="calc-area">
     <button onclick="startChallenge()">チャレンジ開始</button>
   </div>
   <div id="calc-question"></div>
-  <input id="calc-answer" type="text" placeholder="答えを入力" style="display:none;">
+  <input id="calc-answer" type="text" placeholder="答えを入力するにゃん" style="display:none;">
   <div id="calc-result"></div>
   <button id="backToMenuBtn" style="display:none;" onclick="switchMode('menu')">メニューに戻る</button>
 </div>
@@ -132,7 +132,7 @@
 <div class="records-mode" id="records-mode">
   <h2>記録一覧</h2>
   <div id="recordTable"></div>
-  <button onclick="clearRecords()">全削除</button>
+  <button onclick="clearRecords()">全削除（しないほうがいいにゃん）</button>
   <button onclick="switchMode('menu')">メニューに戻る</button>
 </div>
 
@@ -243,7 +243,7 @@ document.getElementById('quizBtn').onclick=()=>{
     const c=(Math.floor(Math.random()*5)-2);
     currentEquation=`y=${a}x^2${b>=0?'+':''}${b}x${c>=0?'+':''}${c}`;
   }
-  document.getElementById('question').textContent=`問題: ${currentEquation} のグラフをかけ`;
+  document.getElementById('question').textContent=`問題: ${currentEquation} のグラフをかけにゃん`;
   drawGrid();paths=[];
 };
 document.getElementById('gradeBtn').onclick=()=>{if(!currentEquation){alert('まず問題を出してね！');return;}gradeDrawing(currentEquation);};
@@ -311,13 +311,13 @@ function endChallenge(){
   const result=`${correctCount}問正解 / ${wrongCount}問ミス<br>
   経過時間: ${time.toFixed(1)}秒<br>
   平均: ${avg}秒/問<br>
-  ランク: ${rank}`;
+  ランク: ${rank}（ごみやにぇ）`;
 
   document.getElementById('calc-result').innerHTML=result;
   document.getElementById('calc-answer').style.display='none';
   document.getElementById('backToMenuBtn').style.display='inline';
   saveRecord({date:new Date().toLocaleString(),correct:correctCount,wrong:wrongCount,time:time.toFixed(1),avg,rank});
-  document.getElementById('calc-question').textContent='終了！';
+  document.getElementById('calc-question').textContent='終了ですぞ！';
 }
 
 function saveRecord(r){
@@ -339,9 +339,10 @@ function showRecords(){
 }
 
 function clearRecords(){
-  if(confirm('本当に全て削除しますか？'))localStorage.removeItem('calcRecords');
+  if(confirm('本当に全て削除しますにゃん？'))localStorage.removeItem('calcRecords');
   showRecords();
 }
 </script>
 </body>
 </html>
+
