@@ -1,0 +1,293 @@
+/* =======================
+   全体テーマ
+   ======================= */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f0f1a, #1a1a2e 40%, #2a2a45);
+  font-family: 'Segoe UI', 'Yu Gothic', sans-serif;
+  color: #f5f5f5;
+  user-select: none;
+}
+
+#app {
+  max-width: 700px;
+  margin: auto;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* タイトルを強く光らせる */
+h1 {
+  font-size: 34px;
+  margin-bottom: 25px;
+  color: #ffd95a;
+  text-shadow: 0 0 15px rgba(255, 217, 90, 0.6);
+  letter-spacing: 2px;
+}
+
+/* =======================
+   ステータスバー（右上固定）
+   ======================= */
+
+#statusBar {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 18px;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 16px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.45);
+}
+
+#statusBar div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* =======================
+   メインボタン
+   ======================= */
+
+button {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border: none;
+  color: white;
+  padding: 14px 22px;
+  font-size: 18px;
+  border-radius: 12px;
+  margin: 10px 0;
+  width: 80%;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(59,130,246,0.5);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+/* =======================
+   入力欄
+   ======================= */
+
+input {
+  width: 70%;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px 0;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+/* =======================
+   画面切替
+   ======================= */
+
+.screen {
+  display: none;
+}
+
+.screen:not(.hidden) {
+  display: block;
+}
+
+/* =======================
+   クイズ画面
+   ======================= */
+
+#question {
+  font-size: 30px;
+  margin: 20px 0;
+  font-weight: bold;
+  color: #ffeb95;
+  text-shadow: 0 0 10px rgba(255,235,149,0.6);
+}
+
+#feedback.correct {
+  color: #4cff88;
+  text-shadow: 0 0 8px rgba(76,255,136,0.4);
+}
+
+#feedback.wrong {
+  color: #ff6b6b;
+  text-shadow: 0 0 8px rgba(255,107,107,0.4);
+}
+
+/* =======================
+   リスト（アイテム・単語）
+   ======================= */
+
+#itemList, #studiedList, #commentList {
+  text-align: left;
+  margin-top: 20px;
+  background: rgba(0,0,0,0.35);
+  padding: 18px;
+  border-radius: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.4);
+}
+
+#itemList div, #studiedList div {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* =======================
+   Googleログインボタン位置
+   ======================= */
+
+#googleLoginArea {
+  margin-top: 15px;
+}
+
+/* =======================
+   ゲーム画面間のアニメーション
+   ======================= */
+
+.screen {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.25s ease;
+}
+
+.screen:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Risu Vocabulary Quest - Pro Neon Dark Theme 
+
+body{
+  background:#0d1117;
+  color:white;
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+}
+
+#app{
+  max-width:800px;
+  margin:auto;
+  padding:30px;
+}
+
+h1{
+  text-align:center;
+  color:#58a6ff;
+  font-size:40px;
+  margin-bottom:20px;
+  text-shadow:0 0 15px #1f6feb;
+}
+
+.screen{ display:none; }
+.screen:not(.hidden){ display:block; }
+
+button{
+  background:#1f6feb;
+  border:none;
+  color:white;
+  padding:12px 20px;
+  font-size:18px;
+  margin:10px 0;
+  border-radius:8px;
+  cursor:pointer;
+  width:100%;
+  transition:0.2s;
+}
+button:hover{
+  background:#388bfd;
+  transform:scale(1.03);
+  box-shadow:0 0 10px #58a6ff;
+}
+
+#statusBar{
+  display:flex;
+  justify-content:space-between;
+  font-size:22px;
+  margin-bottom:20px;
+  padding:10px;
+  background:#161b22;
+  border-radius:10px;
+  border:1px solid #30363d;
+}
+
+#question{
+  font-size:28px;
+  margin-bottom:20px;
+  text-align:center;
+}
+
+#answer{
+  font-size:22px;
+  padding:10px;
+  width:100%;
+  border-radius:8px;
+  border:none;
+  margin-bottom:15px;
+}
+
+#feedback{
+  font-size:20px;
+  margin-top:15px;
+  min-height:30px;
+}
+
+/* ガチャ演出 */
+#gachaResult{
+  padding:20px;
+  text-align:center;
+  font-size:28px;
+  min-height:80px;
+}
+
+.ssr{
+  color:#ffb800;
+  text-shadow:0 0 15px #ffd447;
+  font-weight:bold;
+}
+
+.sr{
+  color:#ff69b4;
+  text-shadow:0 0 12px #ff8ac5;
+}
+
+.r{
+  color:#58a6ff;
+  text-shadow:0 0 10px #1f6feb;
+}
+
+.n{
+  color:#aaa;
+}
+
+/* アイテム画面 */
+#itemList{
+  font-size:20px;
+  line-height:1.8;
+}
+
+/* 勉強した単語 */
+#studiedList{
+  font-size:20px;
+  line-height:1.8;
+}
